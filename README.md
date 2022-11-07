@@ -26,14 +26,13 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 ## Setup the Environment
 
-* Create a virtualenv with Python 3.7 and activate it. Refer to this link for help on specifying the Python version in the virtualenv. 
+* Create a virtualenv with Python 3.7 and activate it. 
 ```bash
-python3 -m pip install --user virtualenv
 # You should have Python 3.7 available in your host. 
 # Check the Python path using `which python3`
 # Use a command similar to this one:
-python3 -m virtualenv --python=<path-to-Python3.7> .devops
-source .devops/bin/activate
+python3 -m venv ~/.devops
+source ~/.devops/bin/activate
 ```
 * Run `make install` to install the necessary dependencies
 
@@ -49,3 +48,20 @@ source .devops/bin/activate
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+## Directory Structure
+
+| Directory/File | Description |
+| ---- | ----------- |
+| `.circleci/config.yml` | CircleCI configuration file|
+| `model_data/housing.csv` | Trained model data for housing prices in Boston |
+| `output_txt_files/docker_out.txt` | Docker log output |
+| `output_txt_files/kubernetes_out.txt` | Kubernetes log output |
+| `app.py` | REST API for predicting housing prices in Boston |
+| `Dockerfile` | Dockerfile for creating application container |
+| `make_prediction.sh` | Script to call prediction API and simulate sample prediction |
+| `Makefile` | Build file |
+| `requirements.txt` | Requirements file |
+| `run_docker.sh` | Script for creating container from Dockerfile |
+| `run_kubernetes.sh` | Script to deploy docker container on Kubernetes cluster |
+| `upload_docker.sh` | Script for uploading docker image to Dockerhub repo |
